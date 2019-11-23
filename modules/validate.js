@@ -1,22 +1,18 @@
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
-//Funcion que valida si los links esta disponibles haciendo una peticion http
+// Funcion que valida si los links esta disponibles haciendo una peticion http
 const validate = array => {
-    let arr = array.map(obj => { 
-        return fetch(obj.href)
-        .then( res => { 
-            if(res.status===200){
-                obj.status= "ok"
-                return obj;
-            }
-            if(res.status===404){   
-                obj.status= "fail"
-                return obj;
-            }  
-        })
-        .catch(()=>console.log("error en validate"))
-    })
-return Promise.all(arr) 
-}
+  let arr = array.map(async link => {
+    let test;
+    try {
+      await fetch(link.href);
+      test = "ok";
+    } catch (error) {
+      test = "fail";
+    }
+    return { ...link, status: test };
+  });
+  return Promise.all(arr);
+};
 
-module.exports= validate;
+module.exports = validate;

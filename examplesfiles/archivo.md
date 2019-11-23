@@ -11,6 +11,3 @@
 * [7. Entrega](#7-entrega)
 * [8. Evaluación](#8-evaluación)
 * [9. Pistas, tips y lecturas complementarias](#9-pistas-tips-y-lecturas-complementarias)
-
-***
-

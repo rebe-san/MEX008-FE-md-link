@@ -1,7 +1,7 @@
 {
   "name": "md-link-rebeca",
   "version": "1.0.1",
-  "description": "Esta libreria halla los links que se encuentran en un archivo markdown ", 
+  "description": "Esta libreria halla los links que se encuentran en un archivo markdown ",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -28,5 +28,6 @@
   "homepage": "https://github.com/rebe-san/MEX008-FE-md-link#readme",
   "dependencies": {
     "node-fetch": "^2.6.0"
-  }
+  },
+  "devDependencies": {}
 }
