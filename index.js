@@ -1,7 +1,7 @@
 // Manejo de la promesa mdLinks
-const mdLinks = require("./modules/mdLinks.js");
+const mdLink = require("./modules/mdLinks.js");
 
-mdLinks(process.argv[2], process.argv[3], process.argv[4])
+mdLink(process.argv[2], process.argv[3], process.argv[4])
   .then(res => {
     console.log(res);
   })

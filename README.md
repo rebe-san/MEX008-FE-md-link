@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/v/md-link-rebeca)
+
 # Markdown Links
 
 Este modulo fue diseñado para cumplir con el siguiente [propósito](https://github.com/Laboratoria/MEX008-FE-md-link) como parte del Bootcamp de Laboratoria:
@@ -36,7 +38,7 @@ const mdLinks = require("md-link-rebeca");
 
 // Caso 1 .- Ruta relativa sin opciones
 
-mdLinks("./some/example.md")
+mdLinks("./folder/example.md")
   .then(links => {
     //=> [{ href, text, file }]
   })
@@ -45,7 +47,7 @@ mdLinks("./some/example.md")
 
 // Caso 2.- Ruta relativa con opcion (validate)
 
-mdLinks("./some/example.md", "--validate")
+mdLinks("./folder/example.md", "--validate")
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
@@ -54,16 +56,43 @@ mdLinks("./some/example.md", "--validate")
 
 // Caso 3 .- Ruta relativa con opcion (stats)
 
-mdLinks("./some/example.md", "--stats")
+mdLinks("./folder/example.md", "--stats")
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
 
   .catch(console.error);
 
-// Caso 4 .- Ruta absoluta de un directorio sin opciones
+// Caso 4 .- Ruta absoluta de un archivo sin opciones
 
-mdLinks("/some/dir")
+mdLinks("/.../dir/file.md")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+
+  .catch(console.error);
+
+// Caso 5 .- Ruta absoluta de un archivo con opcion "--validate"
+
+mdLinks("/.../dir/file.md", "--validate")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+
+  .catch(console.error);
+
+// Caso 6 .- Ruta absoluta de un archivo con opcion "--stats"
+
+mdLinks("/.../dir/file.md", "--stats")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+
+  .catch(console.error);
+
+// Caso 7 .- Ruta absoluta de un directorio sin opciones
+
+mdLinks("/.../dir/")
   .then(links => {
     // => [{ href, text, file }]
   })
@@ -117,7 +146,7 @@ Caso 4 .- Ruta absoluta de un archivo sin opciones
 Esta opción muestra los respectivos links dentro del archivo.
 
 ```
-$ mdLinks /home/dir/file1.md
+$ mdLinks /.../dir/file1.md
 
 [ { file: '/home/dir/file1.md',
  text: 'Leer un archivo',
@@ -137,7 +166,7 @@ Caso 5 .- Ruta absoluta de un archivo con el flag --validate.
 Esta opción muestra los respectivos links que se encuentran dentro del archivo y los valida.
 
 ```
-$ mdLinks /dir/.../file1.md --validate
+$ mdLinks /.../dir/file1.md --validate
 
 [ { file: '/dir/.../file1.md',
  text: 'Leer un archivo',
@@ -157,7 +186,7 @@ Caso 6 .- Ruta absoluta de un archivo con el flag --stats
 Este flag muestra el total de los links que se encuentran dentro del archivo.
 
 ```
-$ mdLinks /dir/.../file1.md
+$ mdLinks /.../dir/file1.md --stats
 
 Total:12
 
@@ -167,7 +196,7 @@ Caso 7 .- Ruta absoluta de un directorio sin opciones
 Esta opción muestra los respectivos links que se encuentran dentro de los archivos Markdown ubicados en el directorio.
 
 ```
-$ mdLinks /dir/.../
+$ mdLinks /.../dir/
 
 [ { file: '/dir/.../file1.md',
 text: 'Leer un archivo',
@@ -182,3 +211,39 @@ text: 'Nodejs',
 href:'https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback' ,
 status: 'ok' }]
 ```
+
+## Checklist
+
+### General
+
+- [x] Puede instalarse via `npm install`
+
+### `README.md`
+
+- Colocar el pseudo código o diagrama de flujo con el algoritmo que soluciona el problema.
+- Un board con el backlog para la implementación de la librería.
+- [x] Documentación técnica de la librería.
+- [x] Guía de uso e instalación de la librería
+
+### API `mdLinks(path, opts)`
+
+- [x] El módulo exporta una función con la interfaz (API) esperada.
+- [x] Implementa soporte para archivo individual
+- [x] Implementa soporte para directorios
+- [x] Implementa `options.validate`
+
+### Pruebas / tests
+
+- Pruebas unitarias cubren un mínimo del 70% de statements, functions, lines, y branches.
+- Pasa tests (y linters) (`npm test`).
+
+### CLI
+
+- [x] Expone ejecutable `md-links` en el path (configurado en `package.json`)
+- [x] Se ejecuta sin errores / output esperado
+- [x] Implementa `--validate`
+- [x] Implementa `--stats`
+
+## Hacker Edition
+
+- Integración continua con Travis o Circle CI.
