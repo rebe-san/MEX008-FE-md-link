@@ -11,7 +11,7 @@
     "links"
   ],
   "scripts": {
-    "test": "mdLinks"
+    "test": "jest"
   },
   "bin": {
     "mdLinks": "bin/cli"
@@ -29,5 +29,7 @@
   "dependencies": {
     "node-fetch": "^2.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }

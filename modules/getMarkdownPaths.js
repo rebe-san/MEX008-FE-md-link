@@ -7,4 +7,5 @@ const getMarkdownPaths = pathFile => {
     .filter(file => isMarkdown(file))
     .map(file => `${pathFile}${file}`);
 };
+
 module.exports = getMarkdownPaths;

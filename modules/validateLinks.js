@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 // Funcion que valida si los links esta disponibles haciendo una peticion http
-const validate = array => {
+const validateLinks = array => {
   let arr = array.map(async link => {
     let test;
     try {
@@ -15,4 +15,4 @@ const validate = array => {
   return Promise.all(arr);
 };
 
-module.exports = validate;
+module.exports = validateLinks;

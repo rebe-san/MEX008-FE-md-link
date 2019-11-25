@@ -42,7 +42,6 @@ mdLinks("./folder/example.md")
   .then(links => {
     //=> [{ href, text, file }]
   })
-
   .catch(console.error);
 
 // Caso 2.- Ruta relativa con opcion (validate)
@@ -51,7 +50,6 @@ mdLinks("./folder/example.md", "--validate")
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
-
   .catch(console.error);
 
 // Caso 3 .- Ruta relativa con opcion (stats)
@@ -60,7 +58,6 @@ mdLinks("./folder/example.md", "--stats")
   .then(links => {
     // => [{ href, text, file, status, ok }]
   })
-
   .catch(console.error);
 
 // Caso 4 .- Ruta absoluta de un archivo sin opciones
@@ -69,7 +66,6 @@ mdLinks("/.../dir/file.md")
   .then(links => {
     // => [{ href, text, file }]
   })
-
   .catch(console.error);
 
 // Caso 5 .- Ruta absoluta de un archivo con opcion "--validate"
@@ -78,7 +74,6 @@ mdLinks("/.../dir/file.md", "--validate")
   .then(links => {
     // => [{ href, text, file }]
   })
-
   .catch(console.error);
 
 // Caso 6 .- Ruta absoluta de un archivo con opcion "--stats"
@@ -87,16 +82,14 @@ mdLinks("/.../dir/file.md", "--stats")
   .then(links => {
     // => [{ href, text, file }]
   })
-
   .catch(console.error);
 
 // Caso 7 .- Ruta absoluta de un directorio sin opciones
 
 mdLinks("/.../dir/")
   .then(links => {
+    })
     // => [{ href, text, file }]
-  })
-
   .catch(console.error);
 ```
 

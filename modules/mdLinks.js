@@ -4,7 +4,7 @@ const getLinks = require("./getLinks.js");
 const stats = require("./getStats.js");
 const fs = require("fs");
 const getMarkdownPaths = require("./getMarkdownPaths.js");
-const validateLinks = require("./validate.js");
+const validateLinks = require("./validateLinks.js");
 
 // Funcion principal mdlinks
 const mdLinks = (pathFile, option1, option2) => {
