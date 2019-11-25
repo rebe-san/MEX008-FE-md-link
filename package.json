@@ -11,7 +11,7 @@
     "links"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "bin": {
     "mdLinks": "bin/cli"

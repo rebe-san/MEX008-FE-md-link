@@ -213,8 +213,6 @@ status: 'ok' }]
 
 ### `README.md`
 
-- Colocar el pseudo código o diagrama de flujo con el algoritmo que soluciona el problema.
-- Un board con el backlog para la implementación de la librería.
 - [x] Documentación técnica de la librería.
 - [x] Guía de uso e instalación de la librería
 
@@ -223,12 +221,11 @@ status: 'ok' }]
 - [x] El módulo exporta una función con la interfaz (API) esperada.
 - [x] Implementa soporte para archivo individual
 - [x] Implementa soporte para directorios
-- [x] Implementa `options.validate`
 
 ### Pruebas / tests
 
-- Pruebas unitarias cubren un mínimo del 70% de statements, functions, lines, y branches.
-- Pasa tests (y linters) (`npm test`).
+- [x]Pruebas unitarias cubren un mínimo del 70% de statements, functions, lines, y branches.
+- [x]Pasa tests (y linters) (`npm test`).
 
 ### CLI
 
@@ -237,6 +234,3 @@ status: 'ok' }]
 - [x] Implementa `--validate`
 - [x] Implementa `--stats`
 
-## Hacker Edition
-
-- Integración continua con Travis o Circle CI.

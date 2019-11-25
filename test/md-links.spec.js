@@ -7,50 +7,12 @@ const readFile = require("../modules/readFile.js");
 const getMarkdownPaths = require("../modules/getMarkdownPaths.js");
 
 const pathMd = "./examplesfiles/file.md";
+const path = "./md-links-spec.js";
 const markdown = `Este es un mock de prueba para utilizarlo en los test de la funciones.
 [Github](https://github.com)
 [Google](https://google.com)
 [Facebook](https://faceboo.com)
 `;
-const path = "./md-links-spec.js";
-const links = [
-  {
-    file: "./md-links-spec.js",
-    text: "Github",
-    href: "https://github.com"
-  },
-  {
-    file: "./md-links-spec.js",
-    text: "Google",
-    href: "https://google.com"
-  },
-  {
-    file: "./md-links-spec.js",
-    text: "Facebook",
-    href: "https://faceboo.com"
-  }
-];
-const linksValidated = [
-  {
-    file: "./md-links-spec.js",
-    text: "Github",
-    href: "https://github.com",
-    status: "ok"
-  },
-  {
-    file: "./md-links-spec.js",
-    text: "Google",
-    href: "https://google.com",
-    status: "ok"
-  },
-  {
-    file: "./md-links-spec.js",
-    text: "Facebook",
-    href: "https://faceboo.com",
-    status: "fail"
-  }
-];
-const stats = `Total : 3`;
 const pathsMarkdown = [
   "./examplesfiles/README.md",
   "./examplesfiles/README_Labo.md",
@@ -58,10 +20,49 @@ const pathsMarkdown = [
   "./examplesfiles/file.md"
 ];
 
+const links = [
+  {
+    file: "./examplesfiles/file.md",
+    text: "Github",
+    href: "https://github.com"
+  },
+  {
+    file: "./examplesfiles/file.md",
+    text: "Google",
+    href: "https://google.com"
+  },
+  {
+    file: "./examplesfiles/file.md",
+    text: "Facebook",
+    href: "https://faceboo.com"
+  }
+];
+const linksValidated = [
+  {
+    file: "./examplesfiles/file.md",
+    text: "Github",
+    href: "https://github.com",
+    status: "ok"
+  },
+  {
+    file: "./examplesfiles/file.md",
+    text: "Google",
+    href: "https://google.com",
+    status: "ok"
+  },
+  {
+    file: "./examplesfiles/file.md",
+    text: "Facebook",
+    href: "https://faceboo.com",
+    status: "fail"
+  }
+];
+const stats = `Total : 3`;
+
 //Test para getLinks
 describe("get links function", () => {
   test("it should be get links to mardown", () => {
-    expect(getLinks(markdown, path)).toEqual(links);
+    expect(getLinks(markdown, pathMd)).toEqual(links);
   });
 });
 
@@ -99,5 +100,19 @@ describe("read file function", () => {
 describe("get paths markdown files function", () => {
   test("it should be return paths to the markdown files in the directory", () => {
     expect(getMarkdownPaths("./examplesfiles/")).toEqual(pathsMarkdown);
+  });
+});
+
+//Test para md links
+describe("markdown files function", () => {
+  test("resolves the path and return an array with all links in that file or directory", () => {
+    return mdLinks(pathMd).then(data => {
+      expect(data).toEqual(links);
+    });
+  });
+  test("validate links an show the result in array", () => {
+    return mdLinks(pathMd, "--validate").then(data => {
+      expect(data).toEqual(linksValidated);
+    });
   });
 });
