@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+//Llama a index.js
+require('../')
