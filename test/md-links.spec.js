@@ -12,9 +12,7 @@ const markdown = `Este es un mock de prueba para utilizarlo en los test de la fu
 [Google](https://google.com)
 [Facebook](https://faceboo.com)
 `;
-
 const path = "./md-links-spec.js";
-
 const links = [
   {
     file: "./md-links-spec.js",
@@ -32,8 +30,7 @@ const links = [
     href: "https://faceboo.com"
   }
 ];
-
-let linksValidated = [
+const linksValidated = [
   {
     file: "./md-links-spec.js",
     text: "Github",
@@ -53,9 +50,7 @@ let linksValidated = [
     status: "fail"
   }
 ];
-
 const stats = `Total : 3`;
-
 const pathsMarkdown = [
   "./examplesfiles/README.md",
   "./examplesfiles/README_Labo.md",
