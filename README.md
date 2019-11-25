@@ -224,8 +224,8 @@ status: 'ok' }]
 
 ### Pruebas / tests
 
-- [x]Pruebas unitarias cubren un mínimo del 70% de statements, functions, lines, y branches.
-- [x]Pasa tests (y linters) (`npm test`).
+- [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions, lines, y branches.
+- [x] Pasa tests (y linters) (`npm test`).
 
 ### CLI
 
